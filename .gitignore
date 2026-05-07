@@ -1,0 +1,23 @@
+# Java
+backend/target/
+backend/*.class
+backend/*.jar
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/*.log
+frontend/.env*
+node_modules/
+package-lock.json
+*.log
+
+# Universal
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Specify
+.specify/feature.json

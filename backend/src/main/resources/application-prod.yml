@@ -1,0 +1,26 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://localhost:5432/petstore
+    username: postgres
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: 8080
+  ssl:
+    enabled: false # Enforce via reverse proxy / load balancer in cloud
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiry-seconds: 86400 # 24 hours in prod
