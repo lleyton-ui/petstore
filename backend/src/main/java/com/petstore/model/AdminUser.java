@@ -29,9 +29,11 @@ public class AdminUser implements UserDetails {
     @Column(name = "password_hash", nullable = false)
     private String password;
 
+    @Builder.Default
     @Column(nullable = false, length = 20)
     private String role = "ADMIN";
 
+    @Builder.Default
     @Column(nullable = false)
     private boolean enabled = true;
 

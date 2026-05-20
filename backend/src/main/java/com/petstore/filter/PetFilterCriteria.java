@@ -18,7 +18,10 @@ public class PetFilterCriteria {
     private Integer maxAge;
     private BigDecimal minPrice;
     private BigDecimal maxPrice;
+    @Builder.Default
     private Integer page = 0;
+    @Builder.Default
     private Integer size = 20;
+    @Builder.Default
     private String sort = "name,asc";
 }

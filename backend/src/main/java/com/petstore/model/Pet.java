@@ -38,6 +38,7 @@ public class Pet {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
+    @Builder.Default
     @Column(name = "availability_status", nullable = false, length = 20)
     private String availabilityStatus = "AVAILABLE";
 
