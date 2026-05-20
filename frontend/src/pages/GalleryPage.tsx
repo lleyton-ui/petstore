@@ -50,14 +50,14 @@ const GalleryPage: React.FC = () => {
       )}
 
       <Grid container spacing={4}>
-        <Grid item xs={12} md={3}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <FilterPanel 
             filters={filters} 
             onFilterChange={handleFilterChange} 
             onClear={handleClearFilters}
           />
         </Grid>
-        <Grid item xs={12} md={9}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <PetGallery 
             pets={pets}
             loading={loading}

@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: petstore-backend
+    env: docker
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DB_HOST
+        fromDatabase:
+          name: petstore-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: petstore-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: petstore-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: petstore-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: petstore-db
+          property: password
+      - key: FRONTEND_ORIGIN
+        value: "*"
+      - key: JWT_SECRET
+        generateValue: true
+
+  - type: web
+    name: petstore-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    plan: free
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: petstore-backend
+          property: host
+
+databases:
+  - name: petstore-db
+    databaseName: petstore
+    user: postgres
+    plan: free

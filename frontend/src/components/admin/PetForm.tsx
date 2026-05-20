@@ -40,7 +40,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)} className="p-2">
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <TextField
             label="Pet Name"
             fullWidth
@@ -52,7 +52,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           />
         </Grid>
         
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <FormControl fullWidth error={!!errors.species}>
             <InputLabel>Species</InputLabel>
             <Select
@@ -67,7 +67,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           </FormControl>
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <TextField
             label="Breed"
             fullWidth
@@ -79,7 +79,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           />
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <FormControl fullWidth error={!!errors.availabilityStatus}>
             <InputLabel>Status</InputLabel>
             <Select
@@ -93,7 +93,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           </FormControl>
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <TextField
             label="Age (Months)"
             type="number"
@@ -106,7 +106,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           />
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid size={{ xs: 12, sm: 6 }}>
           <TextField
             label="Price ($)"
             type="number"
@@ -119,7 +119,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <TextField
             label="Photo URL"
             fullWidth
@@ -128,7 +128,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <TextField
             label="Description"
             fullWidth
@@ -139,7 +139,7 @@ const PetForm: React.FC<PetFormProps> = ({ initialData, onSubmit, onCancel, load
           />
         </Grid>
 
-        <Grid item xs={12} className="flex justify-end gap-2 mt-4">
+        <Grid size={{ xs: 12 }} className="flex justify-end gap-2 mt-4">
           <Button onClick={onCancel} disabled={loading}>
             Cancel
           </Button>

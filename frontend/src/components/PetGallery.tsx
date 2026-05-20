@@ -28,7 +28,7 @@ const PetGallery: React.FC<PetGalleryProps> = ({
       <Box className="w-full">
         <Grid container spacing={3}>
           {[...Array(8)].map((_, i) => (
-            <Grid item key={i} xs={12} sm={6} md={4} lg={3}>
+            <Grid key={i} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <Skeleton variant="rectangular" height={200} sx={{ borderRadius: 1 }} />
               <Skeleton variant="text" sx={{ mt: 1, fontSize: '1.5rem' }} />
               <Skeleton variant="text" width="60%" />
@@ -47,7 +47,7 @@ const PetGallery: React.FC<PetGalleryProps> = ({
     <Box className="w-full flex flex-col items-center">
       <Grid container spacing={3} className="mb-8">
         {pets.map(pet => (
-          <Grid item key={pet.id} xs={12} sm={6} md={4} lg={3}>
+          <Grid key={pet.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
             <PetCard pet={pet} onClick={onPetClick} />
           </Grid>
         ))}

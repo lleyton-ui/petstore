@@ -3,9 +3,9 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:postgresql://localhost:5432/petstore
-    username: postgres
-    password: admin123
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:petstore}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:admin123}
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: false

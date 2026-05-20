@@ -34,7 +34,7 @@ const PetDetailModal: React.FC<PetDetailModalProps> = ({ pet, open, onClose }) =
       
       <DialogContent className="p-0">
         <Grid container>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box 
               component="img"
               src={pet.photoUrl || '/placeholder-pet.png'}
@@ -43,7 +43,7 @@ const PetDetailModal: React.FC<PetDetailModalProps> = ({ pet, open, onClose }) =
               onError={(e: any) => { e.target.src = '/placeholder-pet.png'; }}
             />
           </Grid>
-          <Grid item xs={12} md={6} className="p-6">
+          <Grid size={{ xs: 12, md: 6 }} className="p-6">
             <Typography variant="h3" className="font-bold mb-2">
               {pet.name}
             </Typography>
@@ -62,19 +62,19 @@ const PetDetailModal: React.FC<PetDetailModalProps> = ({ pet, open, onClose }) =
             <Divider className="mb-4" />
 
             <Grid container spacing={2} className="mb-6">
-              <Grid item xs={6}>
+              <Grid size={{ xs: 6 }}>
                 <Typography variant="caption" color="text.secondary">SPECIES</Typography>
                 <Typography variant="body1" className="font-medium">{pet.species}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={{ xs: 6 }}>
                 <Typography variant="caption" color="text.secondary">BREED</Typography>
                 <Typography variant="body1" className="font-medium">{pet.breed}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={{ xs: 6 }}>
                 <Typography variant="caption" color="text.secondary">AGE</Typography>
                 <Typography variant="body1" className="font-medium">{pet.ageMonths} months</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid size={{ xs: 6 }}>
                 <Typography variant="caption" color="text.secondary">ID</Typography>
                 <Typography variant="body1" className="font-medium">#{pet.id}</Typography>
               </Grid>
