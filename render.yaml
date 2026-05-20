@@ -48,6 +48,4 @@ services:
 
 databases:
   - name: petstore-db
-    databaseName: petstore
-    user: postgres
     plan: free
